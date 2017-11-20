@@ -3,7 +3,7 @@
 
 NodeListDE *NodeListDE_Create(char *codigo){
 	NodeListDE *newNode = (NodeListDE*)malloc(sizeof(NodeListDE));
-	newNode->nuevo = NULL;
+	newNode->reciente = NULL;
 	newNode->antiguo =NULL;
 	newNode->cont = codigo;
 	return newNode;
@@ -15,8 +15,16 @@ char[] NodeListDE_GetContent(NodeListDE *node){
 	return node->cont;
 }
 void NodeListDE_SetNext(NodeListDE *node, NodeListDE *next){
-	node->next = next;
+	node->reciente = next;
 }
 NodeListDE *NodeListDE_GetNext(NodeListDE *node){
-	return node->next;
+	return node->reciente;
+}
+
+void NodeListDE_SetNext(NodeListDE *node, NodeListDE *before){
+	node->antiguo= before;
+}
+
+NodeListDE *NodeListDE_GetBefore(NodeListDE *node){
+	return node->antiguo;
 }
