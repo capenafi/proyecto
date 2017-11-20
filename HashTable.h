@@ -1,10 +1,10 @@
 #ifndef HASHTABLE_H
 #define	HASHTABLE_H
 
-#include "../NodeList/NodeList.h"
+#include "List.h"
 
 typedef struct HashTable {
-    List hash[2017];
+    List *hash[2017];
 } HashTable;
 
 HashTable *Hash_Create();
